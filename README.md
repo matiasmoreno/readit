@@ -8,6 +8,15 @@ Ejecuta localmente el proyecto y lo levanta en <localhost:8000>
 
 `python manage.py runserver`
 
+## Modelos
+
+### Many to Many
+
+```python
+authors = models.ManyToManyField("Author", related_name="books")
+```
+`Author` es el nombre de la clase relacionada y `books` es el nombre del nuevo campo de relación en la otra tabla
+
 ## Crear migraciones
 
 Las migraciones crean los pasos necesarios para crear la base de datos. Esto permite realizar wipes en bases de datos y recontruir las tablas. Tambien permite volver a migraciones antiguas y deshacer cambios.
@@ -29,7 +38,7 @@ Django admin es una GUI que permite realizar cambios en nuestra aplicacions como
 
 `python manage.py createsuperuser`
 
-### Registrar modelos para editarnos en /admin
+### Registrar modelos para editarlos en /admin
 
 En admin.py de la aplicación importar y registrar nuestro modelo
 
