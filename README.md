@@ -20,6 +20,24 @@ Las migraciones crean los pasos necesarios para crear la base de datos. Esto per
 Simplemente cambiar el nombre en el model correspondiente y correr `makemigrations` y `migrate`
 Asegurarse de cambiar los titulos a los métodos custom que se hayan creado
 
+## Django Admin
+
+Django admin es una GUI que permite realizar cambios en nuestra aplicacions como:
+ * Crear entradas en las tablas de la BD
+
+### Crear primer super usuario
+
+`python manage.py createsuperuser`
+
+### Registrar modelos para editarnos en /admin
+
+En admin.py de la aplicación importar y registrar nuestro modelo
+
+```python
+from .models import Book
+admin.site.register(Book)
+```
+
 ## Django built-in shell
 
 `python manage.py shell`
